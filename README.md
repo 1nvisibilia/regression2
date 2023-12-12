@@ -9,7 +9,7 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 
 ### Setup
 1. After installing Apache Kafka
-    a. Navigate into the `kafka_2.13-3.6.1` folder
-    b. Start up the ZooKeeper by running `bin/zookeeper-server-start.sh config/zookeeper.properties`
-    c. Start up the Kafka broker by running `bin/kafka-server-start.sh config/server.properties`
-2. docker stuffs...
+2. Navigate into the `kafka_2.13-3.6.1` folder
+3. Start up the ZooKeeper by running `bin/zookeeper-server-start.sh config/zookeeper.properties`
+4. Start up the Kafka broker by running `bin/kafka-server-start.sh config/server.properties`
+5. docker stuffs...
