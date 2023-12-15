@@ -12,10 +12,11 @@ def generateUrl(options: dict):
         params += (key + "=" + options[key] + "&")
     return base_url + params
 
-def fetch_stock(abbr: str, range: str):
+def fetch_stock(abbr: str, range: str, interval: str = "5m"):
     options = {
         "symbols": abbr,
-        "range": range
+        "range": range,
+        "interval": interval
     }
 
     data = requests.get(generateUrl(options), headers=headers).json()
@@ -23,4 +24,5 @@ def fetch_stock(abbr: str, range: str):
     timestamps: str = data["spark"]["result"][0]["response"][0]["timestamp"]
     prices: str = data["spark"]["result"][0]["response"][0]["indicators"]["quote"][0]["close"]
 
-    return list(map(lambda x: { "ts": x[0], "price": x[1] }, (zip(timestamps, prices))))
+    # the scaling by 1000 is needed since yahoo API returns the official timestamps/1000.
+    return list(map(lambda x: { "ts": x[0] * 1000, "price": x[1] }, (zip(timestamps, prices))))

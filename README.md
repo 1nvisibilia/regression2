@@ -13,3 +13,5 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 3. Start up the ZooKeeper by running `bin/zookeeper-server-start.sh config/zookeeper.properties`
 4. Start up the Kafka broker by running `bin/kafka-server-start.sh config/server.properties`
 5. docker stuffs...
+
+bin/kafka-console-consumer.sh --topic BTC-CAD --from-beginning --bootstrap-server localhost:9092
