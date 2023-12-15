@@ -15,3 +15,4 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 5. docker stuffs...
 
 bin/kafka-console-consumer.sh --topic BTC-CAD --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic BTC-CAD --bootstrap-server localhost:9092
