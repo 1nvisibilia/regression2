@@ -12,7 +12,7 @@ def generateUrl(options: dict):
         params += (key + "=" + options[key] + "&")
     return base_url + params
 
-def fetch_stock(abbr: str, range: str, interval: str = "5m"):
+def fetch_stock(abbr: str, range: str, interval: str = "2m"):
     options = {
         "symbols": abbr,
         "range": range,
