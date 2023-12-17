@@ -1,6 +1,9 @@
+import math
 import sys
 import json
+import numpy as np
 from kafka import KafkaConsumer
+from stock_trainer import train_model
 
 currency_name = sys.argv[1] if len(sys.argv) > 1 else "BTC-CAD"
 
@@ -34,3 +37,15 @@ for msg in consumer:
         labels.append(embedding[15:])
 
 print("processed " + str(len(training_data)) + " records in the topic")
+
+train_x = training_data[:math.floor(len(training_data) * 0.8)]
+val_x = training_data[math.floor(len(training_data) * 0.8):]
+train_y = labels[:math.floor(len(labels) * 0.8)]
+val_y = labels[math.floor(len(labels) * 0.8):]
+
+train_model(
+    np.array(train_x),
+    np.array(train_y),
+    np.array(val_x),
+    np.array(val_y)
+)
