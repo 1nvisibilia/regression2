@@ -1,4 +1,5 @@
 # regression
+![project-logo](project-logo.png)
 A set of real-time microservices for collecting and managing stock and cryptocurrency data with Apache Kafka and PyTorch
 
 #### Quick Links
