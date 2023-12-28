@@ -7,9 +7,9 @@ class StockTrainerNN(torch.nn.Module):
         super(StockTrainerNN, self).__init__()
 
         # input layer
-        self.layer1 = torch.nn.Linear(15, 20)
+        self.layer1 = torch.nn.Linear(15, 45)
         # hidden layer
-        self.layer2 = torch.nn.Linear(20, 20)
+        self.layer2 = torch.nn.Linear(45, 20)
         # output layer
         self.layer3 = torch.nn.Linear(20, 5)
 

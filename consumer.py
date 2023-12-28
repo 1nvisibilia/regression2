@@ -1,6 +1,7 @@
 import math
 import sys
 import json
+import random
 import numpy as np
 from kafka import KafkaConsumer
 from stock_trainer import train_model
@@ -37,6 +38,8 @@ for msg in consumer:
         labels.append(embedding[15:])
 
 print("processed " + str(len(training_data)) + " records in the topic")
+
+random.shuffle(training_data)
 
 train_x = training_data[:math.floor(len(training_data) * 0.8)]
 val_x = training_data[math.floor(len(training_data) * 0.8):]
