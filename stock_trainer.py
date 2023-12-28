@@ -88,11 +88,5 @@ def train_model(inputs, labels, test_input, test_labels):
     
     save(stock_model.state_dict(), "model_data")
 
-def compute_instance(input_embedding: list[double]):
-    # data = [57628.086, 57646.805, 57651.54, 57656.316, 57617.81,
-    #         57609.035, 57619.293, 57655.79, 57604.934, 57613.387,
-    #         57524.32, 57524.363, 57576.824, 57624.887, 57615.367]
-    #         57529.016, 57543.332, 57542.895, 57551.69, 57565.87
-    print(stock_model.predict(
-        tensor(input_embedding, dtype=double)
-    ))
+def predict_prices(input_embedding: list[double]):
+    return stock_model.predict(tensor(input_embedding, dtype=double)).detach().numpy()

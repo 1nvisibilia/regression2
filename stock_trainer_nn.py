@@ -1,20 +1,20 @@
-import torch
+from torch import nn, cuda, backends
 
-device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+device = "cuda" if cuda.is_available() else "mps" if backends.mps.is_available() else "cpu"
 
-class StockTrainerNN(torch.nn.Module):
+class StockTrainerNN(nn.Module):
     def __init__(self):
         super(StockTrainerNN, self).__init__()
 
         # input layer
-        self.layer1 = torch.nn.Linear(15, 45)
+        self.layer1 = nn.Linear(15, 45)
         # hidden layer
-        self.layer2 = torch.nn.Linear(45, 20)
+        self.layer2 = nn.Linear(45, 20)
         # output layer
-        self.layer3 = torch.nn.Linear(20, 5)
+        self.layer3 = nn.Linear(20, 5)
 
         # activation
-        self.activation = torch.nn.ReLU()
+        self.activation = nn.ReLU()
 
         # dtype
         self.double()
