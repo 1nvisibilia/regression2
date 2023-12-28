@@ -37,6 +37,8 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 4. Start up the Kafka broker by running `bin/kafka-server-start.sh config/server.properties`
 <!-- 5. docker stuffs... -->
 
+*The instructions below should be executed within the /src directory*
+
 ### Initialize Kafka Topics
 Run `python3 kafka_init.py` to create the Kafka topics for each of the stocks/cryptocurrencies listed
 under `stock_names.py`
