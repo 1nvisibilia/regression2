@@ -46,7 +46,7 @@ On the BTC-CAD data, the learning process converges after around 20 iterations, 
 benchmark:
 - Train loss: 0.000 (3 decimal accuracy)
 - Val loss: 0.000 (3 decimal accuracy)
-- Accuracy: 99.999959 (6 decimal accuracy)
+- Accuracy: 99.999959% (6 decimal accuracy)
 
 ## Step-by-step Instructions for Local Usages
 
