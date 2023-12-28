@@ -3,7 +3,8 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 
 #### Quick Links
 - [Architecture Overview](#architecture-overview)
-    - lists
+    - [System Design](#system-design)
+    - [Summary](#summary)
 - [Step-by-step Instructions for Local Usages](#step-by-step-instructions-for-local-usages)
     - [Requirements](#requirements)
     - [Setup](#setup)
@@ -14,6 +15,10 @@ A set of real-time microservices for collecting and managing stock and cryptocur
         - [Producer](#producer)
 
 ## Architecture Overview
+
+### System Design
+
+### Summary
 
 
 ## Step-by-step Instructions for Local Usages
