@@ -5,7 +5,8 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 ### Requirements
 1. Clone the respository
 2. Have Apache Kafka installed
-<!-- 3. Have Docker Installed -->
+3. Have Python3 installed
+<!-- 4. Have Docker Installed -->
 
 ### Setup
 1. After installing Apache Kafka
@@ -20,14 +21,25 @@ under `stock_names.py`
 
 ### Building the Base ML Model
 Run `python3 train_model.py [currency-abbr]` to read all existing data from the `currency-abbr` Kafka
-topic. The `train_model` program will save the model as the model_data file, and picks the file up for
+topic. `currency-abbr` defaults to BTC-CAD, see `stock_names.py` for examples.
+
+The `train_model.py` program will save the model as the `model_data` file, and picks the file up for
 future runs.
 
 Run `train_model.py` repeatly to train and improve the model.
 
 ### Starting the Long-running Producer and Consumer Jobs
-producer.py, consumer.py etc...
+
+Both producer and consumer are real-time long-running jobs, they require manual termination.
+
+#### Consumer
+Running `python3 consumer.py [currency-abbr]` will start listening for new records in the Kafka
+topic, and train the model upon getting new records.
+#### Producer
+Running `python3 producer.py` (on a different terminal) will periodically pull real-time stock data
+from Yahoo's API. The full list of data it pulls are specified in `stock_names.py`.
 
 
-bin/kafka-console-consumer.sh --topic BTC-CAD --from-beginning --bootstrap-server localhost:9092
-bin/kafka-console-producer.sh --topic BTC-CAD --bootstrap-server localhost:9092
+
+<!-- bin/kafka-console-consumer.sh --topic BTC-CAD --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic BTC-CAD --bootstrap-server localhost:9092 -->
