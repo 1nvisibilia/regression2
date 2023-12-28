@@ -37,6 +37,7 @@ A set of real-time microservices for collecting and managing stock and cryptocur
 4. Start up the Kafka broker by running `bin/kafka-server-start.sh config/server.properties`
 <!-- 5. docker stuffs... -->
 
+<br />
 *The instructions below should be executed within the /src directory*
 
 ### Initialize Kafka Topics
