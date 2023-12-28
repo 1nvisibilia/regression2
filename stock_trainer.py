@@ -22,7 +22,7 @@ def computeAccuracy(outputs, label_data):
         accuracy_sum += accuracy / len(output)
     return accuracy_sum / len(outputs)
 
-def train_model(inputs, labels, test_input, test_labels):
+def train_model(inputs, labels, test_input, test_labels, epochs = 5):
     inputs = from_numpy(inputs)
     labels = from_numpy(labels)
     test_input = from_numpy(test_input)
@@ -39,7 +39,7 @@ def train_model(inputs, labels, test_input, test_labels):
     test_loader = DataLoader(test_dataset, batch_size=10, shuffle=True)
 
 
-    for epoch in range(5):
+    for epoch in range(epochs):
         train_epoch_loss = 0
         stock_model.train()
 
@@ -87,6 +87,7 @@ def train_model(inputs, labels, test_input, test_labels):
         print(f"Epoch {epoch+0:01}: | Train loss: {train_loss:.3f} | Val loss: {val_loss:.3f} | Accuracy: {epoch_accuracy * 100:.6f}%")
     
     save(stock_model.state_dict(), "model_data")
+    print("model state dict updated.")
 
 def predict_prices(input_embedding: list[double]):
     return stock_model.predict(tensor(input_embedding, dtype=double)).detach().numpy()
