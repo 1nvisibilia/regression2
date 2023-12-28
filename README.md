@@ -1,6 +1,22 @@
 # regression
 A set of real-time microservices for collecting and managing stock and cryptocurrency data with Apache Kafka and PyTorch
 
+#### Quick Links
+- [Architecture Overview](#architecture-overview)
+    - lists
+- [Step-by-step Instructions for Local Usages](#step-by-step-instructions-for-local-usages)
+    - [Requirements](#requirements)
+    - [Setup](#setup)
+    - [Initialize Kafka Topics](#initialize-kafka-topics)
+    - [Building the Base ML Model](#building-the-base-ml-model)
+    - [Starting the Long-running Producer and Consumer Jobs](#starting-the-long-running-producer-and-consumer-jobs)
+        - [Consumer](#consumer)
+        - [Producer](#producer)
+
+## Architecture Overview
+
+
+## Step-by-step Instructions for Local Usages
 
 ### Requirements
 1. Clone the respository
@@ -30,7 +46,7 @@ Run `train_model.py` repeatly to train and improve the model.
 
 ### Starting the Long-running Producer and Consumer Jobs
 
-Both producer and consumer are real-time long-running jobs, they require manual termination.
+Both producer and consumer are real-time long-running jobs; they require manual termination.
 
 #### Consumer
 Running `python3 consumer.py [currency-abbr]` will start listening for new records in the Kafka
@@ -41,5 +57,7 @@ from Yahoo's API. The full list of data it pulls are specified in `stock_names.p
 
 
 
-<!-- bin/kafka-console-consumer.sh --topic BTC-CAD --from-beginning --bootstrap-server localhost:9092
-bin/kafka-console-producer.sh --topic BTC-CAD --bootstrap-server localhost:9092 -->
+<!--
+bin/kafka-console-consumer.sh --topic BTC-CAD --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic BTC-CAD --bootstrap-server localhost:9092
+-->
