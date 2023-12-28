@@ -16,6 +16,7 @@ A set of real-time microservices for collecting and managing stock and cryptocur
         - [Producer](#producer)
 
 ## Architecture Overview
+![system-design-diagram](sys-design.svg)
 
 ### System Design
 
