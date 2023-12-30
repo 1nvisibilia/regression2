@@ -2,6 +2,7 @@ import math
 import sys
 import json
 import random
+from time import sleep
 import numpy as np
 from kafka import KafkaConsumer
 from stock_trainer import train_model
@@ -33,7 +34,7 @@ for msg in consumer:
     embedding.append(msg.value["price"])
     if (embedding[0] != -1):
         # add this embedding to the ml trainer
-        raw_data.append(embedding)
+        raw_data.append(embedding.copy())
 
 print("processed " + str(len(raw_data)) + " records in the topic")
 

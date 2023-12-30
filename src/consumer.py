@@ -24,7 +24,7 @@ for msg in non_wait_consumer:
     embedding.append(msg.value["price"])
     if (embedding[0] != -1):
         # add this embedding to the ml trainer
-        raw_data.append(embedding)
+        raw_data.append(embedding.copy())
 
 del non_wait_consumer
 
