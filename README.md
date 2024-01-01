@@ -44,9 +44,9 @@ The back-propagation algorithm used for this model is Stochastic Gradient Descen
 
 On the BTC-CAD data, the learning process converges after around 20 iterations, with the following
 benchmark:
-- Train loss: 4721020.826
-- Val loss: 4764985.904
-- Accuracy: 97.176862%
+- `Train loss: 2884471.775`
+- `Val loss: 2873807.182`
+- `Accuracy: 97.740497%`
 
 ## Step-by-step Instructions for Local Usages
 
