@@ -9,5 +9,11 @@ import (
 func main() {
 	fmt.Println("test")
 
-	r := gin.Default()
+	router := gin.Default()
+
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(200, 565)
+	})
+
+	router.Run(":6001")
 }
