@@ -1,4 +1,4 @@
-module github.com/1nvisibilia/regression
+module github.com/1nvisibilia/regression2
 
 go 1.22.5
 
